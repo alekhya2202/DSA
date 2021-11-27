@@ -13,15 +13,12 @@ int main() {
     for(int i = 0; i < tc; i ++){
         int num;
         cin >> num;
+        unsigned int even = num & 0xAAAAAAAA;
+        unsigned int odd = num & 0x55555555;
         
-        for(int i = 0; i < 32; i += 2){
-            int ith = (num >> i) & 1;
-            int i_plus_1th = (num >> (i + 1)) & 1;
-            num = num - (ith << i)
-                    - (i_plus_1th << (i + 1))
-                    + (ith << (i + 1))
-                    + ((i_plus_1th) << i);}
-        cout << num << endl;
-        }
+        even >>= 1;
+        odd <<= 1;
+        
+        cout << (even | odd) << endl;}
     return 0;
 }
