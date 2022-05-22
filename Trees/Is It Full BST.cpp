@@ -36,7 +36,7 @@ class BST{
         bool isFBST(BST*);
 };
 
-bool FBST :: isBST(BST* root){
+bool BST :: isFBST(BST* root){
     if(root == NULL){
         return true;
     }
