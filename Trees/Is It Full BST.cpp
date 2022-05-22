@@ -33,10 +33,10 @@ class BST{
                 root -> left = insert(root -> left, data);}          
             return root;
         }
-        bool isBST(BST*);
+        bool isFBST(BST*);
 };
 
-bool BST :: isBST(BST* root){
+bool FBST :: isBST(BST* root){
     if(root == NULL){
         return true;
     }
@@ -46,7 +46,7 @@ bool BST :: isBST(BST* root){
     else if((root ->left == NULL && root -> right != NULL) || (root -> left != NULL && root -> right == NULL)){
         return false;
     }
-    return isBST(root -> left) && isBST(root -> right);
+    return isFBST(root -> left) && isFBST(root -> right);
 }
 
 int main() {
@@ -67,7 +67,7 @@ int main() {
                 b.insert(root, nodes[i]);
             }
         }
-        if(b.isBST(root)){
+        if(b.isFBST(root)){
             cout << "True" << endl;
         }
         else{
