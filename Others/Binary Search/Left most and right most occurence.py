@@ -36,8 +36,6 @@ def rmost(arr, num):
 
 
 arr = [3,9,9,45,75,75,75,432]
-#lmost(7) = 5
-#rmost(7) = 10
 print(lmost(arr, 3))
 print(lmost(arr, 75))
 print(rmost(arr, 3))
